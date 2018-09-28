@@ -1,0 +1,116 @@
+{
+  "name": "multiban",
+  "permissions": "BAN_MEMBERS",
+  "restriction": "1",
+  "_id": "RDVYN",
+  "actions": [
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "5",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "title": "**Multi Hackban**",
+      "author": "",
+      "color": "#36393E",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Command",
+      "message": "Bans multiple user id's from the server, even if they have not joined.",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Usage",
+      "message": "[p]multiban (userid-1) (userid-2) (userid-3)",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "varName3": "",
+      "storage3": "0",
+      "name": "Send Embed Message MOD"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "user-id1",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "0",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "user-id2",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "0",
+      "infoIndex": "3",
+      "storage": "1",
+      "varName": "user-id3",
+      "name": "Store Command Params"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "msg.guild.ban(tempVars(\"user-id1\"))\nmsg.guild.ban(tempVars(\"user-id2\"))\nmsg.guild.ban(tempVars(\"user-id3\"))\n.then(user => console.log(\"Banned \" + user.username + \" from\" + msg.guild.name))\n.catch(console.error);",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "title": "Users Banned!",
+      "author": "",
+      "color": "#36393E",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "**Successfully banned users with the ID's:**\n\n**User ID One:**\n`${tempVars(\"user-id1\")}`\n\n**User ID Two:**\n`${tempVars(\"user-id2\")}`\n\n**User ID Three:**\n`${tempVars(\"user-id3\")}`",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "varName3": "",
+      "storage3": "0",
+      "name": "Send Embed Message MOD"
+    }
+  ]
+}
