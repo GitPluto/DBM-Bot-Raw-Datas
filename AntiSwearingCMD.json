@@ -1,0 +1,169 @@
+{
+  "name": "(motherfucker|fuck|bullshit|faggot|fag|bastard|twat|whore|slut|slag|bitch|cunt|shit|nigga|nigger)",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "lRInY",
+  "actions": [
+    {
+      "message": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "invitelink",
+      "name": "Store Message Info"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "channelname",
+      "name": "Store Channel Info"
+    },
+    {
+      "info": "1",
+      "find": "bot-log",
+      "storage": "1",
+      "varName": "logchannel",
+      "name": "Find Channel"
+    },
+    {
+      "info": "1",
+      "find": "Moderator",
+      "storage": "1",
+      "varName": "modrole",
+      "name": "Find Role"
+    },
+    {
+      "info": "1",
+      "find": "Developer",
+      "storage": "1",
+      "varName": "dev",
+      "name": "Find Role"
+    },
+    {
+      "info": "1",
+      "find": "Moderator Jr",
+      "storage": "1",
+      "varName": "modjrrole",
+      "name": "Find Role"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "3",
+      "storage": "1",
+      "varName2": "username",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "7",
+      "storage": "1",
+      "varName2": "usertag",
+      "name": "Store Member Things"
+    },
+    {
+      "member": "1",
+      "varName": "username",
+      "role": "3",
+      "varName2": "modrole",
+      "iftrue": "1",
+      "iftrueVal": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member has Role"
+    },
+    {
+      "member": "1",
+      "varName": "username",
+      "role": "3",
+      "varName2": "dev",
+      "iftrue": "1",
+      "iftrueVal": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member has Role"
+    },
+    {
+      "member": "1",
+      "varName": "username",
+      "role": "3",
+      "varName2": "modjrrole",
+      "iftrue": "1",
+      "iftrueVal": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member has Role"
+    },
+    {
+      "storage": "0",
+      "varName": "message",
+      "name": "Delete Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "${member} No swearing",
+      "storage": "1",
+      "varName2": "message",
+      "name": "Send Message"
+    },
+    {
+      "time": "5",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "message",
+      "name": "Delete Message"
+    },
+    {
+      "title": "${tempVars(\"username\")} has swore. ",
+      "author": "",
+      "color": "RED",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "User",
+      "message": "${tempVars(\"usertag\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Channel",
+      "message": "${tempVars(\"channelname\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Swear Word",
+      "message": "${tempVars(\"invitelink\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "5",
+      "varName2": "logchannel",
+      "name": "Send Embed Message"
+    }
+  ],
+  "comType": "1"
+}
