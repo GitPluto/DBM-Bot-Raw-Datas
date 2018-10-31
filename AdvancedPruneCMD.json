@@ -1,0 +1,72 @@
+{
+  "name": "prune",
+  "permissions": "MANAGE_MESSAGES",
+  "restriction": "1",
+  "_id": "hebKm",
+  "actions": [
+    {
+      "comment": "Credits to Quinten#0001 & 🛠🎃Gaming Mineblox🎃🛠#0256",
+      "color": "#00ffff",
+      "name": "Comment"
+    },
+    {
+      "comment": "For helping to make the command work!",
+      "color": "#00ffff",
+      "name": "Comment"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "info": "0",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "msgamount",
+      "name": "Store Command Params"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "0",
+      "storage": "1",
+      "varName2": "mem",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "7",
+      "storage": "1",
+      "varName2": "memtag",
+      "name": "Store Member Things"
+    },
+    {
+      "channel": "0",
+      "count": "",
+      "condition": "1",
+      "custom": "tempVars(\"mem\")",
+      "varName": "",
+      "name": "Delete Bulk Messages"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "I have deleted `${tempVars(\"msgamount\")}` messages from **${tempVars(\"memtag\")}**",
+      "storage": "1",
+      "varName2": "msg",
+      "name": "Send Message"
+    },
+    {
+      "time": "5",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "name": "Delete Message"
+    }
+  ]
+}
