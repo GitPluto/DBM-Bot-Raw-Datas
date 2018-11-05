@@ -1,0 +1,73 @@
+
+{
+  "name": "purge",
+  "permissions": "MANAGE_MESSAGES",
+  "restriction": "1",
+  "_id": "fhvbs",
+  "actions": [
+    {
+      "comment": "Advanced Purge Command",
+      "color": "#00ffff",
+      "name": "Comment"
+    },
+    {
+      "comment": "Created By PlutoMods™#0001",
+      "color": "#00ffff",
+      "name": "Comment"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "info": "0",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "delmsgs",
+      "name": "Store Command Params"
+    },
+    {
+      "role": "0",
+      "varName": "",
+      "info": "0",
+      "storage": "1",
+      "varName2": "roleobject",
+      "name": "Store Role Info"
+    },
+    {
+      "role": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "roleName",
+      "name": "Store Role Info"
+    },
+    {
+      "channel": "0",
+      "count": "${tempVars(\"delmsgs\")}",
+      "condition": "2",
+      "custom": "tempVars(\"roleobject\")",
+      "varName": "",
+      "name": "Delete Bulk Messages"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "I have purged `${tempVars(\"delmsgs\")}` from the role: **${tempVars(\"roleName\")}** <:WINK6:506446073342984203>",
+      "storage": "1",
+      "varName2": "msg",
+      "name": "Send Message"
+    },
+    {
+      "time": "5",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "msg",
+      "name": "Delete Message"
+    }
+  ]
+}
